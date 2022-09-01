@@ -27,8 +27,8 @@ public class AdjMatrix {
                 int b = scanner.nextInt();
                 validateVertex(b);
 
-                if(a == b) throw new IllegalArgumentException("Self Loop is Detected!");
-                if(adj[a][b] == 1) throw new IllegalArgumentException("Parallel Edges are Detected!");
+                if(a == b) throw new IllegalArgumentException("自环边 is Detected!");
+                if(adj[a][b] == 1) throw new IllegalArgumentException("平行边 are Detected!");
 
                 adj[a][b] = 1;
                 adj[b][a] = 1;
@@ -39,6 +39,7 @@ public class AdjMatrix {
         }
     }
 
+    // 校验顶点v
     private void validateVertex(int v){
         if(v < 0 || v >= V)
             throw new IllegalArgumentException("vertex " + v + "is invalid");
@@ -52,12 +53,14 @@ public class AdjMatrix {
         return E;
     }
 
+    // 顶点v,w是否有边
     public boolean hasEdge(int v, int w){
         validateVertex(v);
         validateVertex(w);
         return adj[v][w] == 1;
     }
 
+    // v顶点 相连的顶点
     public ArrayList<Integer> adj(int v){
         validateVertex(v);
         ArrayList<Integer> res = new ArrayList<>();
@@ -66,7 +69,7 @@ public class AdjMatrix {
                 res.add(i);
         return res;
     }
-
+    // 顶点的度
     public int degree(int v){
         return adj(v).size();
     }

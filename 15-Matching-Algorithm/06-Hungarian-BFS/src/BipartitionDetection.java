@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+// 是否是二分图
 public class BipartitionDetection {
 
     private Graph G;

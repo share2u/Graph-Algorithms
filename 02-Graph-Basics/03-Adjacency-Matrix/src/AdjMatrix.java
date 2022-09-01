@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class AdjMatrix {
 
-    private int V;
-    private int E;
-    private int[][] adj;
+    private int V;// 顶点
+    private int E;// 边
+    private int[][] adj; //邻接矩阵
 
     public AdjMatrix(String filename){
 
